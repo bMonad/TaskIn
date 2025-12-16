@@ -1,15 +1,22 @@
 .task_column {
   width: 33.33%;
   margin: 20px;
-  text-align: center;
 }
 
 .task_column_heading {
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
 .task_column_icon {
   width: 30px;
   margin: 0 5px 5px 0;
+}
+
+.empty_column {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin-top: 20px;
 }

@@ -9,20 +9,36 @@
   width: 40%;
 }
 
+.text-input-wrapper {
+  border: 1px solid #cbe7fd;
+  border-radius: 15px;
+  background: #eefaff;
+  padding: 1px 6px 1px 1px;
+  display: inline-block;
+}
+
 .task_input {
   font-size: 18px;
   font-weight: 500;
-  background: #eefaff;
   color: #303030;
-  border: 1px solid #d0e9fc;
-  border-radius: 15px;
+  border: none;
+  background: none;
+  outline: none;
+  margin: 0 0;
   padding: 8px 12px;
-  margin-bottom: 15px;
-  width: 100%;
 }
 
-.task_input:focus {
-  outline: 2px solid #d0e9fc;
+.text-input-wrapper span {
+  font-size: 18px;
+  margin: 0 3px 0 0;
+  padding: 0 5px;
+  border: 1px solid #fecac9;
+  border-radius: 15px;
+  cursor: pointer;
+  color: red;
+  background-color: #fff4f4;
+  font-weight: bold;
+  visibility: hidden;
 }
 
 .task_form_bottom_line {
@@ -45,6 +61,10 @@
 
 .tag:hover {
   outline: 1px solid #d0e9fc;
+}
+
+.tag.selected {
+  background-color: #a2efa6;
 }
 
 .task_status {
