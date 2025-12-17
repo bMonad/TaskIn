@@ -1,18 +1,29 @@
+import { useEffect, useState } from "react";
 import Header from "./pages/Header";
 import Main from "./pages/Main";
 import './App.css'
-import { useState } from "react";
 
 const App = () => {
 
-  const [task, setTask] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    const stored = localStorage.getItem("tasks");
+    return stored ? JSON.parse(stored) : [];
+  });
 
-  console.log("tasks: ", task);
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+
+  const handleDelete = (taskId) => {
+    const newtasks = tasks.filter(task => task.id !== taskId);
+    setTasks(newtasks);
+  }
 
   return (
     <div className="app">
-      <Header setTask={setTask} />
-      <Main tasks={task} />
+      <Header setTask={setTasks} />
+      <Main tasks={tasks} handleDelete={handleDelete} />
     </div>
   )
 }

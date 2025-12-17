@@ -47,20 +47,18 @@ const Header = ({ setTask }) => {
     });
   }
 
-  console.log(taskData.tags);
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
     console.log("Submitted Task Data:", taskData);
+    const newTask = { ...taskData, id: Date.now() };
 
     setTaskData({
       task: "",
       status: "todo",
       tags: []
     });
-    setTask((prev) => ([...prev, taskData]));
+    setTask((prev) => ([...prev, newTask]));
     handleClear();
   }
 
